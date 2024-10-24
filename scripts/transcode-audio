@@ -17,7 +17,7 @@ if ! ls ./*.mkv >/dev/null 2>&1; then
 fi
 
 # Process each file using for loop directly
-for file in ./*.mkv; do
+for file in *.mkv; do
   # Ensure we actually have a file (in case of no matches)
   [ -f "$file" ] || continue
 
@@ -30,8 +30,7 @@ for file in ./*.mkv; do
   echo "Processing: $file"
   echo "Output will be: $output_file"
 
-  ffmpeg -i 2024-10-13\ 14-10-31.mkv -c:v copy -c:a alac test.mov
-
+  # Run ffmpeg command
   if ffmpeg -i "$file" -c:v copy -c:a alac "$output_file" 2>/dev/null; then
     echo "Successfully transcoded: $file"
     ((processed++))
