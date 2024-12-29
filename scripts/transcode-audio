@@ -25,7 +25,7 @@ for file in *.mkv; do
   filename=$(basename "$file" .mkv)
 
   # Create output filename
-  output_file="${filename}-transcoded.mov"
+  output_file="${filename}-transcoded.mp4"
 
   echo "Processing: $file"
   echo "Output will be: $output_file"
