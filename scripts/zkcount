@@ -5,6 +5,10 @@
 
 ZETTELKASTEN="$HOME/Zettelkasten"
 
-COUNT=$(/opt/homebrew/bin/fd -L .md "$ZETTELKASTEN" | /usr/bin/wc -l | /usr/bin/xargs)
+# MacOS config:
+# COUNT=$(/opt/homebrew/bin/fd -L .md "$ZETTELKASTEN" | /usr/bin/wc -l | /usr/bin/xargs)
+
+# Linux:
+COUNT=$(/usr/bin/fd -L .md "$ZETTELKASTEN" | /usr/bin/wc -l | /usr/bin/xargs)
 
 /usr/bin/curl -d "count=$COUNT" -X POST http://zktracker.mischavandenburg.net/count
