@@ -2,10 +2,15 @@
 size = 25
 
 [font.normal]
-family = "UbuntuMono Nerd Font"
+#family = "UbuntuMono Nerd Font"
+family = "JetBrains Mono"
 
 [window]
-decorations = "none"
+#decorations = "none"
+
+[window.dimensions]
+columns = 100
+lines = 50
 
 [window.padding]
 x = 7
