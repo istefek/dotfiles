@@ -7,7 +7,11 @@ BACKUPS_DESTINATION="/Volumes/OurStuff/Ivan/backups"
 # stop the script if an error occurs
 set -e
 
-rsync -a --delete --quiet --exclude="{"/home/*/.cache/*"}" /Users/ivan $BACKUPS_DESTINATION/home
-rsync -a --delete --quiet /etc $BACKUPS_DESTINATION
+# For Mac Device
+rsync -a --delete --quiet --exclude="{"/Users/ivan/.cache/*"}" /Users/ivan $BACKUPS_DESTINATION/home
+
+# For Linux Device
+#rsync -a --delete --quiet --exclude="{"/home/ivan/.cache/*"}" /home/ivan $BACKUPS_DESTINATION/home
+#rsync -a --delete --quiet /etc $BACKUPS_DESTINATION
 
 echo "Made backups on: $(date)" >> /var/log/backup.log
